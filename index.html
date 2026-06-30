@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A2B Errands – Delivery & Personal Services</title>
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #fff;
+  color: #1a2332;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, select { font-family: inherit; }
+
+.site { max-width: 1200px; margin: 0 auto; background: #fff; }
+
+.topbar {
+  background: #eef6fb;
+  border-bottom: 1px solid #d8edf7;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #5a6478;
+  padding: 8px 0;
+  letter-spacing: .01em;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+/* ══════════════════════════════
+   NAV
+══════════════════════════════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #eef0f4;
+  padding: 0 40px;
+}
+
+.nav-logo img { height: 38px; display: block; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2px;
+}
+.nav-links a {
+  display: block;
+  padding: 5px 11px;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #5a6478;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: color .15s, background .15s;
+}
+.nav-links a:hover { color: #1a2332; background: #f6f7f9; }
+
+.nav-end { display: flex; align-items: center; gap: 10px; }
+
+.btn-lang {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 13px;
+  border-radius: 8px;
+  border: 1px solid #e4e7ed;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #5a6478;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.btn-lang:hover { border-color: #b0b8c8; }
+
+.btn-nav-cta {
+  height: 36px;
+  padding: 0 20px;
+  border-radius: 8px;
+  background: #22c55e;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-nav-cta:hover { background: #16a34a; }
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+.hero {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #c9e8f7 url('img/background.png') center / cover no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(201,232,247,1)   0%,
+    rgba(201,232,247,1)  32%,
+    rgba(201,232,247,.65) 52%,
+    rgba(201,232,247,.12) 70%,
+    rgba(201,232,247,0)   84%
+  );
+}
+
+.hero-body {
+  position: relative;
+  z-index: 1;
+  padding: 0 52px;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+
+.hero-h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.5px;
+  color: #1a2332;
+  margin-bottom: 18px;
+  margin-top: 8px;
+}
+.hero-h1 em {
+  font-style: normal;
+  color: #22c55e;
+}
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: #5a6478;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 400px;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.btn-hero-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 28px;
+  border-radius: 10px;
+  background: #22c55e;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(34,197,94,.38);
+  transition: background .15s, box-shadow .15s, transform .1s;
+}
+.btn-hero-green:hover {
+  background: #16a34a;
+  box-shadow: 0 6px 28px rgba(34,197,94,.48);
+  transform: translateY(-1px);
+}
+
+.btn-hero-ghost {
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 28px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #ffffff, #eef5f9);
+  border: 1.5px solid #c5d8e6;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a2332;
+  cursor: pointer;
+  backdrop-filter: none;
+  transition: background .15s, border-color .15s;
+}
+.btn-hero-ghost:hover {
+  background: linear-gradient(to bottom, #ffffff, #e2eef5);
+  border-color: #a8c8dc;
+}
+
+/* Stats row */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.hero-stat {
+  padding-right: 28px;
+  margin-right: 28px;
+  border-right: 1px solid rgba(0,0,0,.08);
+}
+.hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+
+.stat-val {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a2332;
+  letter-spacing: -.3px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-val span { color: #22c55e; }
+.stat-lbl {
+  font-size: 11.5px;
+  color: #8693a8;
+  font-weight: 400;
+}
+
+/* ══════════════════════════════
+   QUOTE WIDGET
+══════════════════════════════ */
+.quote-section {
+  padding: 0 40px 52px;
+}
+
+.quote-card {
+  display: flex;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #e8ecf2;
+  box-shadow:
+    0 2px 4px rgba(15,23,42,.04),
+    0 8px 24px rgba(15,23,42,.07),
+    0 24px 56px rgba(15,23,42,.06);
+  overflow: hidden;
+  transform: translateY(-36px);
+  margin-bottom: -20px;
+}
+
+/* Form */
+.qf {
+  flex: 1;
+  padding: 32px 36px 30px;
+}
+
+.qf-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.qf-ico {
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+.qf-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a2332;
+  letter-spacing: -.2px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px 22px;
+}
+.form-row + .form-row {
+  margin-top: 16px;
+  align-items: end;
+}
+
+.fld { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+
+.fld-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8693a8;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.fld-inp, .fld-sel {
+  height: 44px;
+  width: 100%;
+  padding: 0 14px;
+  border-radius: 9px;
+  border: 1.5px solid #e4e7ed;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1a2332;
+  background: #fff;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.fld-inp::placeholder { color: #adb5c4; }
+.fld-inp:hover, .fld-sel:hover { border-color: #c2c8d4; }
+.fld-inp:focus, .fld-sel:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,.11);
+}
+.fld-sel {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8'%3E%3Cpath d='M1 1l5.5 6L12 1' stroke='%23adb5c4' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.dt-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8693a8;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.dt-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dt-opt {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.dt-opt input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+}
+.dt-opt-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #3d4a5c;
+  cursor: pointer;
+  transition: color .15s;
+}
+.dt-opt-label:hover { color: #1a2332; }
+
+/* Custom radio circle */
+.dt-opt-label::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #d0d6e0;
+  background: #fff;
+  flex-shrink: 0;
+  transition: border-color .15s, background .15s, box-shadow .15s;
+  display: flex;
+}
+.dt-opt input[type=radio]:checked + .dt-opt-label {
+  color: #1a2332;
+  font-weight: 500;
+}
+.dt-opt input[type=radio]:checked + .dt-opt-label::before {
+  border: 5px solid #22c55e;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(34,197,94,.14);
+}
+
+/* Schedule row */
+.schedule-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px 22px;
+  margin-top: 16px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .3s ease, opacity .25s ease, margin .3s ease;
+}
+.schedule-row.visible {
+  max-height: 80px;
+  opacity: 1;
+  margin-bottom: 16px;
+}
+
+/* Continue row */
+.continue-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .3s ease, opacity .25s ease;
+}
+.continue-row.visible {
+  max-height: 60px;
+  opacity: 1;
+}
+.btn-continue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 24px;
+  border-radius: 9px;
+  background: #22c55e;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background .15s, transform .1s;
+  white-space: nowrap;
+}
+.btn-continue:hover { background: #16a34a; transform: translateY(-1px); }
+.continue-note {
+  font-size: 12.5px;
+  color: #a0aab8;
+}
+
+.btn-calc {
+  width: 100%;
+  height: 44px;
+  border-radius: 9px;
+  background: #12243c;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: .01em;
+  transition: background .15s, transform .1s;
+}
+.btn-calc:hover { background: #1c3356; transform: translateY(-1px); }
+.btn-calc.loading { opacity: .7; pointer-events: none; }
+
+/* Address autocomplete */
+.addr-wrap { position: relative; width: 100%; }
+.addr-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0; right: 0;
+  background: #fff;
+  border: 1.5px solid #e4e7ed;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15,23,42,.1);
+  z-index: 999;
+  overflow: hidden;
+  display: none;
+}
+.addr-dropdown.open { display: block; }
+.addr-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background .12s;
+  border-bottom: 1px solid #f1f5f9;
+}
+.addr-option:last-child { border-bottom: none; }
+.addr-option:hover { background: #f6f8fb; }
+.addr-pin {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #22c55e;
+}
+.addr-main { font-size: 13px; font-weight: 500; color: #1a2332; }
+.addr-sub  { font-size: 11.5px; color: #8693a8; margin-top: 1px; }
+.addr-loading {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #8693a8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.addr-spinner {
+  width: 14px; height: 14px;
+  border: 2px solid #e4e7ed;
+  border-top-color: #22c55e;
+  border-radius: 50%;
+  animation: spin .6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Price value animation */
+@keyframes popIn {
+  0%   { transform: scale(.8); opacity: 0; }
+  60%  { transform: scale(1.08); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.pop { animation: popIn .3s ease forwards; }
+
+/* Price panel */
+.qp {
+  width: 230px;
+  flex-shrink: 0;
+  background: #f9fafc;
+  border-left: 1px solid #eef0f4;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.qp-lbl {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #a0aab8;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 13.5px;
+  border-bottom: 1px solid #eef0f4;
+}
+.price-row:last-of-type { border-bottom: none; }
+.price-row .pl { color: #8693a8; font-weight: 400; }
+.price-row .pv { color: #3d4a5c; font-weight: 500; }
+
+.price-total {
+  margin-top: 12px;
+  padding: 14px 18px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e4e7ed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(15,23,42,.04);
+}
+.price-total .tl { font-size: 14px; font-weight: 500; color: #5a6478; }
+.price-total .tv {
+  font-size: 28px;
+  font-weight: 700;
+  color: #22c55e;
+  letter-spacing: -.5px;
+  line-height: 1;
+}
+
+/* ══════════════════════════════
+   SERVICES
+══════════════════════════════ */
+.services {
+  background: #fff;
+  padding: 60px 40px 68px;
+}
+
+.sec-h {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.sec-h h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a2332;
+  letter-spacing: -.3px;
+}
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+}
+
+.svc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 6px;
+  border-radius: 14px;
+  border: 1.5px solid #eef0f4;
+  background: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+  position: relative;
+  overflow: hidden;
+}
+.svc::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #f0fdf4;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.svc:hover {
+  border-color: #86efac;
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(34,197,94,.13);
+}
+.svc:hover::after { opacity: 1; }
+.svc > * { position: relative; z-index: 1; }
+
+.svc-ico {
+  width: 50px; height: 50px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+.c1 { background: #fef3c7; }
+.c2 { background: #dbeafe; }
+.c3 { background: #fce7f3; }
+.c4 { background: #f1f5f9; }
+.c5 { background: #ffedd5; }
+.c6 { background: #ccfbf1; }
+.c7 { background: #ede9fe; }
+.c8 { background: #dcfce7; }
+
+.svc-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #4a5568;
+  line-height: 1.4;
+}
+
+/* ══════════════════════════════
+   HOW IT WORKS
+══════════════════════════════ */
+.hiw {
+  background: #f6f8fb;
+  border-top: 1px solid #eef0f4;
+  padding: 60px 40px 72px;
+}
+
+.hiw-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+}
+
+/* connecting dashed line */
+.hiw-wrap::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 1.5px;
+  background: linear-gradient(90deg, #22c55e 0%, #86efac 50%, #22c55e 100%);
+  opacity: .25;
+}
+
+.hiw-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 28px;
+}
+
+.hiw-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  box-shadow: 0 6px 22px rgba(34,197,94,.3);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.hiw-num::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(34,197,94,.22);
+}
+
+.hiw-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a2332;
+  margin-bottom: 10px;
+  letter-spacing: -.1px;
+}
+.hiw-desc {
+  font-size: 13.5px;
+  color: #7a8699;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ══════════════════════════════
+   HAMBURGER BUTTON
+══════════════════════════════ */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1.5px solid #e4e7ed;
+  cursor: pointer;
+  background: #fff;
+  flex-shrink: 0;
+  padding: 0;
+}
+.nav-burger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: #5a6478;
+  border-radius: 2px;
+  transition: transform .25s, opacity .25s;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ══════════════════════════════
+   MOBILE NAV DRAWER
+══════════════════════════════ */
+.mob-nav {
+  position: fixed;
+  top: 0; right: 0;
+  width: min(320px, 85vw);
+  height: 100dvh;
+  background: #fff;
+  z-index: 600;
+  box-shadow: -4px 0 40px rgba(5,13,28,.14);
+  transform: translateX(100%);
+  transition: transform .32s cubic-bezier(.4,0,.2,1);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  overflow-y: auto;
+}
+.mob-nav.open { transform: translateX(0); }
+
+.mob-nav-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.mob-close {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1.5px solid #e4e7ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  line-height: 1;
+  color: #5a6478;
+  cursor: pointer;
+  background: #fff;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.mob-close:hover { background: #f6f7f9; }
+
+.mob-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.mob-links li a {
+  display: block;
+  padding: 12px 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #3d4a5c;
+  border-radius: 8px;
+  transition: background .15s, color .15s;
+}
+.mob-links li a:hover { background: #f6f7f9; color: #1a2332; }
+
+.mob-divider {
+  height: 1px;
+  background: #eef0f4;
+  margin: 16px 0;
+}
+.mob-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mob-cta-green {
+  height: 48px;
+  border-radius: 10px;
+  background: #22c55e;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: background .15s;
+}
+.mob-cta-green:hover { background: #16a34a; }
+
+.mob-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,13,28,.45);
+  z-index: 599;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .32s;
+  backdrop-filter: blur(2px);
+}
+.mob-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE — TABLET
+══════════════════════════════ */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+  .btn-lang { display: none; }
+  .nav { padding: 0 24px; }
+
+  .svc-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .form-row { grid-template-columns: 1fr 1fr; }
+  .form-row > :last-child { grid-column: span 2; }
+  .schedule-row { grid-template-columns: 1fr 1fr; }
+  .schedule-row > :last-child { grid-column: span 2; }
+  .schedule-row.visible { max-height: 160px; }
+}
+
+/* ══════════════════════════════
+   RESPONSIVE — MOBILE
+══════════════════════════════ */
+/* ══════════════════════════════
+   QUOTE BOTTOM SHEET (mobile)
+══════════════════════════════ */
+.qsheet-bar {
+  display: none;
+}
+.qsheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,13,28,.48);
+  z-index: 699;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .32s;
+  backdrop-filter: blur(3px);
+}
+.qsheet-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (max-width: 640px) {
+  /* ── Nav — тот же небесно-голубой, без разделителя ── */
+  .nav {
+    padding: 0 16px;
+    height: 58px;
+    background: #c9e8f7;
+    border-bottom: none;
+  }
+  .nav-logo img { height: 32px; }
+  .btn-nav-cta { display: none; }
+  .btn-lang { display: flex; background: transparent; border-color: transparent; }
+  .nav-burger { background: transparent; border-color: transparent; }
+
+  /* ── Topbar — hide on mobile ── */
+  .topbar { display: none; }
+
+  /* ── Hero — full screen ── */
+  .hero {
+    height: 100svh;
+    min-height: 600px;
+    padding: 0;
+    align-items: flex-start;
+    /* небесно-голубой фон + фото снизу */
+    background: #c9e8f7 url('img/background.png') 72% bottom / 280% auto no-repeat;
+  }
+  .hero::before {
+    /* голубой → прозрачный, заканчивается до доставщика */
+    background: linear-gradient(
+      to bottom,
+      rgba(201,232,247,1)   0%,
+      rgba(201,232,247,1)  36%,
+      rgba(201,232,247,.55) 48%,
+      rgba(201,232,247,0)   60%
+    );
+  }
+  /* тёмный текст на светлом фоне */
+  .hero-h1 { color: #1a2332; }
+  .hero-h1 em { color: #22c55e; }
+  .hero-sub { color: #5a6478; }
+  .stat-val { color: #1a2332; }
+  .stat-val span { color: #22c55e; }
+  .stat-lbl { color: #8693a8; }
+  .hero-stat { border-right-color: rgba(0,0,0,.08); }
+  .btn-hero-ghost {
+    background: #fff;
+    border: 1.5px solid #fff;
+    color: #1a2332;
+    backdrop-filter: none;
+  }
+  .hero-body {
+    padding: 48px 20px 0;
+    max-width: 100%;
+    gap: 0;
+  }
+  .hero-h1 {
+    font-size: 34px;
+    letter-spacing: -.3px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    line-height: 1.1;
+  }
+  .hero-sub {
+    font-size: 13px;
+    margin-bottom: 20px;
+    max-width: 90%;
+    line-height: 1.6;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 26px;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .btn-hero-green {
+    width: 90%;
+    justify-content: center;
+    height: 48px;
+    font-size: 14.5px;
+    background: linear-gradient(135deg, #2dd463 0%, #18a849 100%);
+    box-shadow: 0 4px 16px rgba(34,197,94,.28);
+  }
+  .btn-hero-ghost {
+    width: 72%;
+    height: 44px;
+    font-size: 13.5px;
+    padding: 0 22px;
+    justify-content: center;
+    background: linear-gradient(to bottom, #ffffff 0%, #eef5f9 100%);
+    border: 1.5px solid #c5d8e6;
+    color: #1a2332;
+    backdrop-filter: none;
+  }
+  /* ачивки — карточки вместо строки */
+  .hero-stats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  .hero-stat {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #e8ecf2;
+    border-radius: 12px;
+    padding: 10px 8px;
+    margin: 0;
+    border-right: 1px solid #e8ecf2;
+    box-shadow: 0 1px 6px rgba(15,23,42,.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-stat:last-child { border-right: 1px solid #e8ecf2; margin-right: 0; padding-right: 8px; }
+  .stat-val { font-size: 19px; margin-bottom: 2px; }
+  .stat-lbl { font-size: 10px; }
+
+  /* ── Quote section → bottom sheet ── */
+  #quoteSection {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 700;
+    max-height: 92svh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0;
+    transform: translateY(110%);
+    transition: transform .38s cubic-bezier(.4,0,.2,1);
+  }
+  #quoteSection.open {
+    transform: translateY(0);
+  }
+  #quoteSection .quote-card {
+    flex-direction: column;
+    transform: none;
+    margin-bottom: 0;
+    border-radius: 20px 20px 0 0;
+    border: none;
+    box-shadow: 0 -8px 48px rgba(5,13,28,.2);
+    overflow: visible;
+  }
+  .qsheet-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px 4px;
+  }
+  .qsheet-handle {
+    width: 36px; height: 4px;
+    border-radius: 2px;
+    background: #d0d6e0;
+    margin: 0 auto;
+    flex: 1;
+  }
+  .qsheet-close {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    border: 1.5px solid #e4e7ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #5a6478;
+    cursor: pointer;
+    background: #fff;
+    flex-shrink: 0;
+  }
+  #quoteSection .qf { padding: 12px 16px 20px; }
+  #quoteSection .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  #quoteSection .form-row > :last-child { grid-column: span 1; }
+  #quoteSection .schedule-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  #quoteSection .schedule-row > :last-child { grid-column: span 2; }
+  #quoteSection .schedule-row.visible { max-height: 160px; }
+  #quoteSection .qp {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #eef0f4;
+    padding: 20px 16px 28px;
+  }
+
+  /* ── Services ── */
+  .services { padding: 44px 16px 52px; }
+  .svc-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .svc { padding: 16px 4px; }
+  .svc-ico { width: 42px; height: 42px; font-size: 19px; }
+  .svc-lbl { font-size: 10px; }
+
+  /* ── How It Works ── */
+  .hiw { padding: 44px 16px 52px; }
+  .hiw-wrap { grid-template-columns: 1fr; gap: 28px; }
+  .hiw-wrap::before { display: none; }
+  .hiw-step { flex-direction: row; text-align: left; padding: 0; gap: 20px; }
+  .hiw-num { margin-bottom: 0; flex-shrink: 0; width: 48px; height: 48px; font-size: 18px; }
+  .hiw-title { margin-bottom: 6px; }
+}
+
+@media (max-width: 400px) {
+  .hero-h1 { font-size: 28px; }
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-stat { padding-right: 14px; margin-right: 14px; }
+}
+
+</style>
+</head>
+<body>
+<div class="site">
+
+<!-- TOP BAR -->
+<div class="topbar">A2B Errands – Delivery &amp; Personal Services</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo"><img src="img/logo.png" alt="A2B Errands"></a>
+  <ul class="nav-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">How It Works</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Service Area</a></li>
+    <li><a href="#">Reviews</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="nav-end">
+    <button class="btn-lang">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+        <rect width="20" height="14" rx="2" fill="#B22234"/>
+        <rect y="1" width="20" height="1.6" fill="#fff"/>
+        <rect y="3.8" width="20" height="1.6" fill="#fff"/>
+        <rect y="6.6" width="20" height="1.6" fill="#fff"/>
+        <rect y="9.4" width="20" height="1.6" fill="#fff"/>
+        <rect y="12.2" width="20" height="1.6" fill="#fff"/>
+        <rect width="8" height="8" rx="1" fill="#3C3B6E"/>
+      </svg>
+      EN
+    </button>
+    <button class="btn-nav-cta">Get Quote</button>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mob-nav" id="mobNav" aria-hidden="true">
+  <div class="mob-nav-hdr">
+    <a href="#"><img src="img/logo.png" alt="A2B Errands" style="height:32px;display:block;"></a>
+    <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+  </div>
+  <ul class="mob-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">How It Works</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Service Area</a></li>
+    <li><a href="#">Reviews</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="mob-divider"></div>
+  <div class="mob-ctas">
+    <button class="mob-cta-green">Get Instant Quote</button>
+  </div>
+</div>
+<div class="mob-overlay" id="mobOverlay"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-body">
+
+    <h1 class="hero-h1">Need Something<br><em>Delivered</em> Today?</h1>
+
+    <p class="hero-sub">
+      Trusted local delivery — From Point A to Point B,
+      fast, reliable &amp; professional.
+    </p>
+
+    <div class="hero-ctas">
+      <button class="btn-hero-green">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/></svg>
+        Get Instant Quote
+      </button>
+      <button class="btn-hero-ghost">Book Delivery</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-val">24<span>min</span></div>
+        <div class="stat-lbl">Avg. delivery</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-val">4.9<span>★</span></div>
+        <div class="stat-lbl">Customer rating</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-val">5k<span>+</span></div>
+        <div class="stat-lbl">Deliveries done</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTE SHEET OVERLAY (mobile) -->
+<div class="qsheet-overlay" id="qsheetOverlay"></div>
+
+<!-- QUOTE -->
+<div class="quote-section" id="quoteSection">
+  <div class="quote-card">
+
+    <div class="qf">
+      <!-- Mobile sheet handle bar -->
+      <div class="qsheet-bar">
+        <div class="qsheet-handle"></div>
+        <button class="qsheet-close" id="qsheetClose">✕</button>
+      </div>
+      <div class="qf-header">
+        <div class="qf-ico">💲</div>
+        <div class="qf-title">Get an Instant Quote</div>
+      </div>
+
+      <div class="form-row">
+        <div class="fld">
+          <label class="fld-lbl">Pickup Address</label>
+          <div class="addr-wrap">
+            <input class="fld-inp" id="addrFrom" type="text" placeholder="Start typing address…" autocomplete="off">
+            <div class="addr-dropdown" id="dropFrom"></div>
+          </div>
+        </div>
+        <div class="fld">
+          <label class="fld-lbl">Service</label>
+          <select class="fld-sel" id="serviceType" onchange="resetCalc()">
+            <option>Key Delivery</option>
+            <option>Grocery Delivery</option>
+            <option>Flower Delivery</option>
+            <option>Documents Delivery</option>
+            <option>Small Package</option>
+            <option>Store Pickup</option>
+            <option>Personal Errands</option>
+          </select>
+        </div>
+        <div>
+          <div class="dt-lbl">Delivery Time</div>
+          <div class="dt-opts">
+            <label class="dt-opt">
+              <input type="radio" name="dt" value="asap" checked onchange="onTimeChange()">
+              <span class="dt-opt-label">ASAP</span>
+            </label>
+            <label class="dt-opt">
+              <input type="radio" name="dt" value="schedule" onchange="onTimeChange()">
+              <span class="dt-opt-label">Schedule</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule picker (hidden by default) -->
+      <div class="schedule-row" id="scheduleRow">
+        <div class="fld">
+          <label class="fld-lbl">Date</label>
+          <input class="fld-inp" type="date" id="schedDate">
+        </div>
+        <div class="fld">
+          <label class="fld-lbl">Time</label>
+          <select class="fld-sel" id="schedTime">
+            <option>7:00 AM</option><option>8:00 AM</option><option>9:00 AM</option>
+            <option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option>
+            <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option>
+            <option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option>
+            <option>7:00 PM</option><option>8:00 PM</option><option>9:00 PM</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label class="fld-lbl">Notes (optional)</label>
+          <input class="fld-inp" type="text" placeholder="e.g. call on arrival">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="fld">
+          <label class="fld-lbl">Delivery Address</label>
+          <div class="addr-wrap">
+            <input class="fld-inp" id="addrTo" type="text" placeholder="Start typing address…" autocomplete="off">
+            <div class="addr-dropdown" id="dropTo"></div>
+          </div>
+        </div>
+        <div class="fld">
+          <label class="fld-lbl">Package Size</label>
+          <select class="fld-sel" id="pkgSize" onchange="resetCalc()">
+            <option value="small">Small (up to 5 lb)</option>
+            <option value="medium">Medium (5–20 lb)</option>
+            <option value="large">Large (20–50 lb)</option>
+          </select>
+        </div>
+        <button class="btn-calc" id="btnCalc" onclick="calcPrice()">Calculate Price</button>
+      </div>
+
+      <!-- Continue button (hidden until calculated) -->
+      <div class="continue-row" id="continueRow">
+        <button class="btn-continue">
+          Continue to Booking
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <span class="continue-note">No payment required yet</span>
+      </div>
+    </div>
+
+    <div class="qp">
+      <div>
+        <div class="qp-lbl">Estimate</div>
+        <div class="price-row"><span class="pl">Distance</span><span class="pv" id="outDist">—</span></div>
+        <div class="price-row"><span class="pl">Estimated Time</span><span class="pv" id="outTime">—</span></div>
+        <div class="price-row"><span class="pl">Base Delivery</span><span class="pv" id="outBase">—</span></div>
+        <div class="price-row"><span class="pl">Distance Fee</span><span class="pv" id="outDfee">—</span></div>
+        <div class="price-row"><span class="pl">Package Fee</span><span class="pv" id="outPfee">—</span></div>
+      </div>
+      <div class="price-total">
+        <span class="tl">Total</span>
+        <span class="tv" id="outTotal">—</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+<script>
+// Set min date for schedule picker to today
+const dateInput = document.getElementById('schedDate');
+const today = new Date().toISOString().split('T')[0];
+dateInput.min = today;
+dateInput.value = today;
+
+// Show/hide schedule row
+function onTimeChange() {
+  const val = document.querySelector('input[name="dt"]:checked').value;
+  const row = document.getElementById('scheduleRow');
+  row.classList.toggle('visible', val === 'schedule');
+  resetCalc();
+}
+
+// Reset price panel when inputs change
+function resetCalc() {
+  ['outDist','outTime','outBase','outDfee','outPfee','outTotal'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+  document.getElementById('continueRow').classList.remove('visible');
+}
+
+// Pricing config
+const SERVICE_FEES = {
+  'Key Delivery':      { base: 20, perMile: 2.50, label: '$0.00' },
+  'Grocery Delivery':  { base: 25, perMile: 2.50, label: '$2.00' },
+  'Flower Delivery':   { base: 22, perMile: 2.50, label: '$1.00' },
+  'Documents Delivery':{ base: 20, perMile: 2.00, label: '$0.00' },
+  'Small Package':     { base: 22, perMile: 2.50, label: '$0.00' },
+  'Store Pickup':      { base: 28, perMile: 2.50, label: '$3.00' },
+  'Personal Errands':  { base: 30, perMile: 3.00, label: '$5.00' },
+};
+const PKG_FEES = { small: 0, medium: 3, large: 8 };
+
+function calcPrice() {
+  const btn = document.getElementById('btnCalc');
+  btn.classList.add('loading');
+  btn.textContent = 'Calculating…';
+
+  // Simulate async calculation
+  setTimeout(() => {
+    const service = document.getElementById('serviceType').value;
+    const pkg     = document.getElementById('pkgSize').value;
+    const cfg     = SERVICE_FEES[service] || SERVICE_FEES['Key Delivery'];
+    const pkgFee  = PKG_FEES[pkg] || 0;
+
+    const dist  = +(4 + Math.random() * 10).toFixed(1);
+    const mins  = Math.round(dist * 2.8 + 6);
+    const dfee  = +(dist * cfg.perMile).toFixed(2);
+    const svcFee = parseFloat(cfg.label.replace('$', ''));
+    const total = +(cfg.base + dfee + pkgFee + svcFee).toFixed(2);
+
+    set('outDist',  dist + ' mi');
+    set('outTime',  mins + ' min');
+    set('outBase',  '$' + cfg.base.toFixed(2));
+    set('outDfee',  '$' + dfee.toFixed(2));
+    set('outPfee',  pkgFee > 0 ? '+$' + pkgFee.toFixed(2) : '$0.00');
+    set('outTotal', '$' + total.toFixed(2));
+
+    btn.classList.remove('loading');
+    btn.textContent = 'Recalculate';
+    document.getElementById('continueRow').classList.add('visible');
+  }, 600);
+}
+
+function set(id, val) {
+  const el = document.getElementById(id);
+  el.textContent = val;
+  el.classList.remove('pop');
+  void el.offsetWidth; // reflow
+  el.classList.add('pop');
+}
+
+// Wire service select to reset
+document.querySelectorAll('.fld-sel').forEach(el => {
+  el.addEventListener('change', resetCalc);
+});
+
+// ── ADDRESS AUTOCOMPLETE ──
+function initAddr(inputId, dropId) {
+  const input = document.getElementById(inputId);
+  const drop  = document.getElementById(dropId);
+  let timer;
+
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    const q = input.value.trim();
+    if (q.length < 3) { drop.classList.remove('open'); return; }
+
+    drop.innerHTML = '<div class="addr-loading"><div class="addr-spinner"></div>Searching…</div>';
+    drop.classList.add('open');
+
+    timer = setTimeout(() => fetchAddr(q, input, drop), 350);
+  });
+
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (!input.contains(e.target) && !drop.contains(e.target)) {
+      drop.classList.remove('open');
+    }
+  });
+}
+
+async function fetchAddr(query, input, drop) {
+  try {
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=5&addressdetails=1&countrycodes=us&viewbox=-122.6,47.2,-121.7,47.9&bounded=0`;
+    const res  = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+    const data = await res.json();
+
+    if (!data.length) {
+      drop.innerHTML = '<div class="addr-loading">No results found</div>';
+      return;
+    }
+
+    drop.innerHTML = data.map(place => {
+      const addr = place.address;
+      const main = [addr.house_number, addr.road].filter(Boolean).join(' ') || place.display_name.split(',')[0];
+      const sub  = [addr.city || addr.town || addr.village, addr.state].filter(Boolean).join(', ');
+      return `
+        <div class="addr-option" data-full="${place.display_name.split(',').slice(0,3).join(',')}">
+          <svg class="addr-pin" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="currentColor"/>
+          </svg>
+          <div>
+            <div class="addr-main">${main}</div>
+            <div class="addr-sub">${sub}</div>
+          </div>
+        </div>`;
+    }).join('');
+
+    drop.querySelectorAll('.addr-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        input.value = opt.dataset.full;
+        drop.classList.remove('open');
+        resetCalc();
+      });
+    });
+  } catch {
+    drop.innerHTML = '<div class="addr-loading">Connection error. Try again.</div>';
+  }
+}
+
+initAddr('addrFrom', 'dropFrom');
+initAddr('addrTo',   'dropTo');
+
+// ── QUOTE SHEET (mobile popup) ──
+const quoteSection  = document.getElementById('quoteSection');
+const qsheetOverlay = document.getElementById('qsheetOverlay');
+const qsheetClose   = document.getElementById('qsheetClose');
+
+function openQuoteSheet() {
+  if (window.innerWidth > 640) return;
+  quoteSection.classList.add('open');
+  qsheetOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeQuoteSheet() {
+  quoteSection.classList.remove('open');
+  qsheetOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.btn-hero-green, .btn-hero-ghost, .mob-cta-green').forEach(btn => {
+  btn.addEventListener('click', openQuoteSheet);
+});
+qsheetClose.addEventListener('click', closeQuoteSheet);
+qsheetOverlay.addEventListener('click', closeQuoteSheet);
+
+// ── MOBILE NAV ──
+const navBurger  = document.getElementById('navBurger');
+const mobNav     = document.getElementById('mobNav');
+const mobOverlay = document.getElementById('mobOverlay');
+const mobClose   = document.getElementById('mobClose');
+
+function openMobNav() {
+  mobNav.classList.add('open');
+  mobOverlay.classList.add('open');
+  navBurger.classList.add('open');
+  mobNav.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobNav() {
+  mobNav.classList.remove('open');
+  mobOverlay.classList.remove('open');
+  navBurger.classList.remove('open');
+  mobNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+navBurger.addEventListener('click', openMobNav);
+mobClose.addEventListener('click', closeMobNav);
+mobOverlay.addEventListener('click', closeMobNav);
+
+document.querySelectorAll('.mob-links a').forEach(a => {
+  a.addEventListener('click', closeMobNav);
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMobNav();
+});
+</script>
+</body>
+</html>
