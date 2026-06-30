@@ -914,7 +914,7 @@ input, select { font-family: inherit; }
     padding: 0 16px;
     height: 58px;
     background: #c9e8f7;
-    border-bottom: none;
+    border-bottom: 1px solid rgba(255,255,255,.45);
   }
   .nav-logo img { height: 32px; }
   .btn-nav-cta { display: none; }
@@ -926,21 +926,19 @@ input, select { font-family: inherit; }
 
   /* ── Hero — full screen ── */
   .hero {
-    height: 100svh;
-    min-height: 600px;
+    height: 76svh;
+    min-height: 540px;
     padding: 0;
     align-items: flex-start;
-    /* небесно-голубой фон + фото снизу */
-    background: #c9e8f7 url('img/background.png') 72% bottom / 280% auto no-repeat;
+    background: #c9e8f7 url('img/background mob.jpg') center bottom / 100% auto no-repeat;
   }
   .hero::before {
-    /* голубой → прозрачный, заканчивается до доставщика */
     background: linear-gradient(
       to bottom,
       rgba(201,232,247,1)   0%,
-      rgba(201,232,247,1)  36%,
-      rgba(201,232,247,.55) 48%,
-      rgba(201,232,247,0)   60%
+      rgba(201,232,247,1)  34%,
+      rgba(201,232,247,.6)  48%,
+      rgba(201,232,247,0)   62%
     );
   }
   /* тёмный текст на светлом фоне */
@@ -958,9 +956,10 @@ input, select { font-family: inherit; }
     backdrop-filter: none;
   }
   .hero-body {
-    padding: 48px 20px 0;
+    padding: 48px 20px 28px;
     max-width: 100%;
     gap: 0;
+    height: 100%;
   }
   .hero-h1 {
     font-size: 34px;
@@ -1001,11 +1000,12 @@ input, select { font-family: inherit; }
     color: #1a2332;
     backdrop-filter: none;
   }
-  /* ачивки — карточки вместо строки */
+  /* ачивки — карточки внизу хиро */
   .hero-stats {
     display: flex;
     gap: 8px;
     flex-wrap: nowrap;
+    margin-top: auto;
   }
   .hero-stat {
     flex: 1;
